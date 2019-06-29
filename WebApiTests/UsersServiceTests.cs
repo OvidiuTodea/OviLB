@@ -33,11 +33,11 @@ namespace Tests
                 var added = new examen_web_application.Viewmodels.RegisterPostModel
 
                 {
-                    Email = "petre@aol.com",
-                    FirstName = "Petre",
-                    LastName = "Popescu",
-                    Password = "12345678",
-                    Username = "ppetre",
+                    Email = "ovi@yahoo.com",
+                    FirstName = "ovi",
+                    LastName = "ovi",
+                    Password = "123456789",
+                    Username = "ovi",
                 };
                 var result = usersService.Register(added);
 
@@ -62,17 +62,17 @@ namespace Tests
                 var added = new examen_web_application.Viewmodels.RegisterPostModel
 
                 {
-                    Email = "petre@aol.com",
-                    FirstName = "Petre",
-                    LastName = "Popica",
-                    Password = "12345678",
-                    Username = "ppetre",
+                    Email = "ovi1@yahoo.com",
+                    FirstName = "ovi1",
+                    LastName = "ovi1",
+                    Password = "123456789",
+                    Username = "ovi1",
                 };
                 usersService.Register(added);
                 var loggedIn = new examen_web_application.Viewmodels.LoginPostModel
                 {
-                    Username = "ppetre",
-                    Password = "12345678"
+                    Username = "ovi1",
+                    Password = "123456789"
 
                 };
                 var authoresult = usersService.Authenticate(added.Username, added.Password);
@@ -80,7 +80,7 @@ namespace Tests
                 Assert.IsNotNull(authoresult);
                 Assert.AreEqual(1, authoresult.Id);
                 Assert.AreEqual(loggedIn.Username, authoresult.Username);
-                //Assert.AreEqual(loggedIn.Password, UsersService.);
+                
             }
 
 
@@ -102,18 +102,18 @@ namespace Tests
                 var added = new examen_web_application.Viewmodels.RegisterPostModel
 
                 {
-                    Email = "petre@aol.com",
-                    FirstName = "Petre",
-                    LastName = "Popescu",
-                    Password = "12345678",
-                    Username = "ppetre",
+                    Email = "ovi1@aol.com",
+                    FirstName = "ovi1",
+                    LastName = "ovi1",
+                    Password = "123456789",
+                    Username = "ovi1",
                 };
                 usersService.Register(added);
 
-                // Act
+                
                 var result = usersService.GetAll();
 
-                // Assert
+                
                 Assert.IsNotEmpty(result);
                 Assert.AreEqual(1, result.Count());
 
@@ -129,8 +129,7 @@ namespace Tests
 
             using (var context = new UsersDbContext(options))
             {
-                //var regValidator = new RegisterValidator();
-                //var crValidator = new CreateValidator();
+                
                 var usersService = new UsersService(context, config);
                 var added1 = new examen_web_application.Viewmodels.RegisterPostModel
                 {
@@ -159,17 +158,10 @@ namespace Tests
 
             using (var context = new UsersDbContext(options))
             {
-                //var regValidator = new RegisterValidator();
-                //var crValidator = new CreateValidator();
+               
                 var usersService = new UsersService(context, config);
 
-                //UserRole addUserRoleRegular = new UserRole
-                //{
-                //    Name = "Regular",
-                //    Description = "Created for test"
-                //};
-                //context.UserRoles.Add(addUserRoleRegular);
-                //context.SaveChanges();
+               
 
                 var added1 = new examen_web_application.Viewmodels.UserPostModel
                 {
@@ -195,8 +187,7 @@ namespace Tests
 
             using (var context = new UsersDbContext(options))
             {
-                //var validator = new RegisterValidator();
-                //var crValidator = new CreateValidator();
+                
                 var usersService = new UsersService(context, config);
                 var added = new examen_web_application.Viewmodels.RegisterPostModel
                 {
@@ -211,7 +202,7 @@ namespace Tests
 
                 Assert.NotNull(userCreated);
 
-                //Assert.AreEqual(0, usersService.GetAll().Count());
+               
 
                 var userDeleted = usersService.Delete(1);
 
@@ -220,45 +211,6 @@ namespace Tests
 
             }
         }
-        //[Test]
-        //public void ValidUpsertShouldModifyFieldsValues()
-        //{
-        //    var options = new DbContextOptionsBuilder<UsersDbContext>()
-        //    .UseInMemoryDatabase(databaseName: nameof(ValidUpsertShouldModifyFieldsValues))
-        //    .Options;
-
-        //    using (var context = new UsersDbContext(options))
-        //    {
-        //        //var validator = new RegisterValidator();
-        //        //var crValidator = new CreateValidator();
-        //        var usersService = new UsersService(context,  config);
-        //        var added = new examen_web_application.Viewmodels.UserPostModel
-        //        {
-        //            FirstName = "Nume",
-        //            LastName = "Prenume",
-        //            Username = "userName",
-        //            Email = "user@yahoo.com",
-        //            Password = "333333"
-        //        };
-
-        //        usersService.Create(added);
-
-        //        var updated = new examen_web_application.Viewmodels.UserPostModel
-        //        {
-        //            FirstName = "Alin",
-        //            LastName = "Popescu",
-        //            Username = "popAlin",
-        //            Email = "pop@yahoo.com",
-        //            Password = "333333"
-        //        };
-        //        var addedBy = "Admin";
-        //        var userUpdated = usersService.Upsert(1, updated, addedBy);
-
-        //        Assert.NotNull(userUpdated);
-        //        Assert.AreEqual("Alin", userUpdated.FirstName);
-        //        Assert.AreEqual("Popescu", userUpdated.LastName);
-
-        //    }
-        //}
+        
     }
 }

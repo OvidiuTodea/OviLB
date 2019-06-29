@@ -22,29 +22,29 @@ namespace examen_web_application.Models
             context.Users.AddRange(
                 new User
                 {
-                    FirstName = "Maniu",
-                    LastName = "Lucian",
-                    Username = "lmaniu",
-                    Email = "lucian@aol.com",
+                    FirstName = "ovi1",
+                    LastName = "ovi1",
+                    Username = "ovi1",
+                    Email = "ovi1@yahoo.com",
                     Password = ComputeSha256Hash("123456789"),
                     UserRole = UserRole.Admin,
                 },
                new User
                {
-                   FirstName = "Popescu",
-                   LastName = "George",
-                   Username = "geopop",
-                   Email = "pg@aol.com",
-                   Password = ComputeSha256Hash("12345678"),
+                   FirstName = "ovi12",
+                   LastName = "ovi12",
+                   Username = "ovi12",
+                   Email = "ovi12@yahoo.com",
+                   Password = ComputeSha256Hash("123456789"),
                    UserRole = UserRole.Regular,
                },
                new User
                {
-                   FirstName = "Dan",
-                   LastName = "Cristina",
-                   Username = "crisdan",
-                   Email = "cris@aol.com",
-                   Password = ComputeSha256Hash("1234567"),
+                   FirstName = "ovi123",
+                   LastName = "ovi123",
+                   Username = "ovi123",
+                   Email = "ovi12@yahoo.com",
+                   Password = ComputeSha256Hash("123456789"),
                    UserRole = UserRole.Moderator,
                }
             );
